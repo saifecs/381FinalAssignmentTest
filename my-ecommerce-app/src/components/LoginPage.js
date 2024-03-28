@@ -1,20 +1,13 @@
-import React, { useState } from 'react';
-import Header from 'src\components\Header.js';
-import Footer from 'src\components\Footer.js';
-import LoginForm from 'src\components\LoginForm.js';
-import SignupForm from 'src\components\SignupForm.js';
+import React from 'react';
+import Header from './Header.js';
+import Footer from './Footer.js';
+import LoginForm from './LoginForm.js';
 
 function LoginPage() {
-  const [isLoginView, setIsLoginView] = useState(true);
-
   return (
     <div>
       <Header />
-      {isLoginView ? (
-        <LoginForm onSwitchToSignup={() => setIsLoginView(false)} />
-      ) : (
-        <SignupForm onSwitchToLogin={() => setIsLoginView(true)} />
-      )}
+      <LoginForm />
       <Footer />
     </div>
   );
